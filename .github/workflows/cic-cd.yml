@@ -6,6 +6,11 @@ on:
         #     branches: ['main', 'dev']
         branches: [ 'main']
 
+        
+permissions:
+    id-token: write
+    contents: read
+
 jobs:
     build_scan:
         runs-on: ubuntu-latest
