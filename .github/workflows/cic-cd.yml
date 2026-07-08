@@ -29,7 +29,12 @@ jobs:
                 exit-code: 0
                 ignore-unfixed: true 
                 severity: CRITICAL,HIGH
-
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v4 # More information on this action can be found below in the 'AWS Credentials' section
+              with:
+                aws-region: us-east-1
+                role-to-assume: arn:aws:iam::315558363288:role/github-action-role
             - name: Login to Amazon ECR
               id: login-ecr
               uses: aws-actions/amazon-ecr-login@v2
+              
